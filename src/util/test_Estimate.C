@@ -154,7 +154,24 @@ int main ()
     return -1;
   }
 
-  
+  // ///////////////////////////////////////////////////////////////////////
+  //
+  // test Estimate operations with simple types
+  //
+
+  Estimate<double> xplus = x + (double)2.0;
+  Estimate<double> xmult = x * (double)2.0;
+
+  cerr << "x=" << x << " x+2=" << xplus << endl;
+  cerr << "x=" << x << " x*2=" << xmult << endl;
+
+  std::complex<double> cc(0.0,2.0);
+  std::complex< Estimate<double> > aplus = a + cc;
+  std::complex< Estimate<double> > amult = a * cc;
+
+  cerr << "a=" << a << " a+2i=" << aplus << endl;
+  cerr << "a=" << a << " a*2i=" << amult << endl;
+
   return 0;
 }
 
